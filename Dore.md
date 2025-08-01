@@ -40,7 +40,7 @@ quast.py ext_long_read_assembly/raw_and_QC/GCA_005876975.1_DoreRS1_genomic.fna \
 ```
 </details>
 
-**Output (path):** `ext_long_read_assembly/raw_and_QC/quast_results/`  
+**Output:** `ext_long_read_assembly/raw_and_QC/quast_results/`  
 - `report.html`  
 - `report.pdf`  
 - `basic_stats/GCA_005876975.1_DoreRS1_genomic_GC_content_plot.pdf`  
@@ -72,7 +72,7 @@ busco -i ext_long_read_assembly/raw_and_QC/GCA_005876975.1_DoreRS1_genomic.fna \
 ```
 </details>
 
-**Output (path):** `ext_long_read_assembly/raw_and_QC/run_dore2/`  
+**Output:** `ext_long_read_assembly/raw_and_QC/run_dore2/`  
 - `busco_results_summary/full_table.tsv`  
 - `busco_results_summary/missing_busco_list.tsv`  
 - `busco_results_summary/short_summary.txt`
@@ -108,33 +108,21 @@ fastqc -o evo_gen_rna_seq_reads/raw_reads_and_QC/FASTQC \
 ```
 </details>
 
-**Output (path):**  
+**Output:**  
 - Genomic QC reports: `evogen_short_reads/raw_reads_and_QC/FASTQC/`  
   - `C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.html`  
-  - `C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.zip`  
   - `C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html`  
-  - `C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.zip`  
 - RNA-seq QC reports: `evo_gen_rna_seq_reads/raw_reads_and_QC/FASTQC/`  
   - `A3_0TLl19_l1_1_fastqc.html`  
-  - `A3_0TLl19_l1_1_fastqc.zip`  
   - `A3_0TLl19_l1_2_fastqc.html`  
-  - `A3_0TLl19_l1_2_fastqc.zip`  
   - `A4_0TP114_l1_1_fastqc.html`  
-  - `A4_0TP114_l1_1_fastqc.zip`  
   - `A4_0TP114_l1_2_fastqc.html`  
-  - `A4_0TP114_l1_2_fastqc.zip`  
   - `B3_0TFl19_l1_1_fastqc.html`  
-  - `B3_0TFl19_l1_1_fastqc.zip`  
   - `B3_0TFl19_l1_2_fastqc.html`  
-  - `B3_0TFl19_l1_2_fastqc.zip`  
   - `B4_0TMl19_l1_1_fastqc.html`  
-  - `B4_0TMl19_l1_1_fastqc.zip`  
   - `B4_0TMl19_l1_2_fastqc.html`  
-  - `B4_0TMl19_l1_2_fastqc.zip`  
   - `Im1611_GCCAAT_L005_R1_fastqc.html`  
-  - `Im1611_GCCAAT_L005_R1_fastqc.zip`  
   - `Im1611_GCCAAT_L005_R2_fastqc.html`  
-  - `Im1611_GCCAAT_L005_R2_fastqc.zip`
 
 **Results:**  
 
@@ -163,7 +151,7 @@ trimmomatic PE -phred33 -threads 8 \
 ```
 </details>
 
-**Output (path):** `evogen_short_reads/trimmed_reads_and_QC/`  
+**Output:** `evogen_short_reads/trimmed_reads_and_QC/`  
 - `C3F0NACXX_PG0409_02A02_H1_L006_R1_paired.fq.gz`  
 - `C3F0NACXX_PG0409_02A02_H1_L006_R1_unpaired.fq.gz`  
 - `C3F0NACXX_PG0409_02A02_H1_L006_R2_paired.fq.gz`  
@@ -240,7 +228,7 @@ done
 ```
 </details>
 
-**Output (path):** `evo_gen_rna_seq_reads/trimmed_reads_and_QC/`  
+**Output:** `evo_gen_rna_seq_reads/trimmed_reads_and_QC/`  
 - `A3_0TLl19_l1_1.trim.paired.fq.gz`  
 - `A3_0TLl19_l1_2.trim.paired.fq.gz`  
 - `A4_0TP114_l1_1.trim.paired.fq.gz`  
@@ -252,7 +240,7 @@ done
 - `Im1611_GCCAAT_L005_R1.trim.paired.fq.gz`  
 - `Im1611_GCCAAT_L005_R2.trim.paired.fq.gz`  
 
-**Output (path):** `evo_gen_rna_seq_reads/trimmed_reads_and_QC/` (files listed above)
+**Output:** `evo_gen_rna_seq_reads/trimmed_reads_and_QC/` (files listed above)
 
 **Results:**
 
@@ -283,31 +271,22 @@ fastqc -o evo_gen_rna_seq_reads/trimmed_reads_and_QC/FASTQC \
 ```
 </details>
 
-**Output (path):**  
+**Output:**  
 - `evogen_short_reads/trimmed_reads_and_QC/FASTQC/`  
-  - `C3F0NACXX_PG0409_02A02_H1_L006_R1_paired_fastqc.html`  
-  - `C3F0NACXX_PG0409_02A02_H1_L006_R1_paired_fastqc.zip`  
+  - `C3F0NACXX_PG0409_02A02_H1_L006_R1_paired_fastqc.html`
+  - `C3F0NACXX_PG0409_02A02_H1_L006_R2_paired_fastqc.html` CHECK THIS  
+
 - `evo_gen_rna_seq_reads/trimmed_reads_and_QC/FASTQC/`  
   - `A3_0TLl19_l1_1.trim.paired_fastqc.html`  
-  - `A3_0TLl19_l1_1.trim.paired_fastqc.zip`  
   - `A3_0TLl19_l1_2.trim.paired_fastqc.html`  
-  - `A3_0TLl19_l1_2.trim.paired_fastqc.zip`  
   - `A4_0TP114_l1_1.trim.paired_fastqc.html`  
-  - `A4_0TP114_l1_1.trim.paired_fastqc.zip`  
   - `A4_0TP114_l1_2.trim.paired_fastqc.html`  
-  - `A4_0TP114_l1_2.trim.paired_fastqc.zip`  
   - `B3_0TFl19_l1_1.trim.paired_fastqc.html`  
-  - `B3_0TFl19_l1_1.trim.paired_fastqc.zip`  
   - `B3_0TFl19_l1_2.trim.paired_fastqc.html`  
-  - `B3_0TFl19_l1_2.trim.paired_fastqc.zip`  
   - `B4_0TMl19_l1_1.trim.paired_fastqc.html`  
-  - `B4_0TMl19_l1_1.trim.paired_fastqc.zip`  
   - `B4_0TMl19_l1_2.trim.paired_fastqc.html`  
-  - `B4_0TMl19_l1_2.trim.paired_fastqc.zip`  
   - `Im1611_GCCAAT_L005_R1.trim.paired_fastqc.html`  
-  - `Im1611_GCCAAT_L005_R1.trim.paired_fastqc.zip`  
   - `Im1611_GCCAAT_L005_R2.trim.paired_fastqc.html`  
-  - `Im1611_GCCAAT_L005_R2.trim.paired_fastqc.zip`
 
 **Results:**  
 Outputs: corresponding `.../FASTQC/` directories (raw + images preserved).
@@ -336,7 +315,7 @@ bwa-mem2 mem -t 8 -v 3 -a \
 ```
 </details>
 
-**Output (path):**  
+**Output:**  
 - `alignmentsR1.sam FIX THIS`  
 - `alignmentsR2.sam FIX THIS`
 
@@ -360,15 +339,15 @@ polypolish polish \
 ```
 </details>
 
-**Output (path):** `ext_long_read_assembly/polished_and_QC/`  
+**Output:** `ext_long_read_assembly/polished_and_QC/`  
 - `GCA_005876975.1_DoreRS1_genomic_polished.fasta`  
 - `GCA_005876975.1_DoreRS1_genomic_polished.flagstat`
 
 **Results:**  
-Combined flagstat: 
-Total 307,086,568
-Mapped 228,784,008 (74.50 %)
-Properly-paired 218,148,562 (71.11 %)
+Combined flagstat: \
+Total 307,086,568 \
+Mapped 228,784,008 (74.50 %) \
+Properly-paired 218,148,562 (71.11 %) \
 
 **Notes:**  
 
@@ -385,7 +364,7 @@ RepeatMasker -pa 12 -xsmall -e hmmer -species 7215 \
 ```
 </details>
 
-**Output (path):** `ext_long_read_assembly/repeatmasked_polished/`  
+**Output:** `ext_long_read_assembly/repeatmasked_polished/`  
 - `GCA_005876975.1_DoreRS1_genomic_polished.fasta.masked.clean.fa`    
 - `repeatmasked/GCA_005876975.1_DoreRS1_genomic_polished.fasta.masked`  
 - `repeatmasked/GCA_005876975.1_DoreRS1_genomic_polished.fasta.out`  
@@ -433,7 +412,7 @@ done
 ```
 </details>
 
-**Output (path):** `ext_long_read_assembly/star_repeatmasked_polished/STAR_output/`  
+**Output:** `ext_long_read_assembly/star_repeatmasked_polished/STAR_output/`  
 - `STAR_output_A3_0TLl19_l1_1_Aligned.sortedByCoord.out.bam`  
 - `STAR_output_A4_0TP114_l1_1_Aligned.sortedByCoord.out.bam`  
 - `STAR_output_B3_0TFl19_l1_1_Aligned.sortedByCoord.out.bam`  
@@ -463,10 +442,9 @@ braker.pl \
 ```
 </details>
 
-**Outputs (path):** `ext_long_read_assembly/braker_star_repeatmasked_polished/`  
+**Outputs:** `ext_long_read_assembly/braker_star_repeatmasked_polished/`  
 - `braker.gtf`  
 - `braker.gff3`  
-- `braker.codingseq`  
 - `braker.aa`  
 
 **Results:**  
