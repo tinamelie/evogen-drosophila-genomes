@@ -43,15 +43,6 @@ quast.py ext_long_read_assembly/raw_and_QC/GCA_005876975.1_DoreRS1_genomic.fna \
 **Output (path):** `ext_long_read_assembly/raw_and_QC/quast_results/`  
 - `report.html`  
 - `report.pdf`  
-- `report.tex`  
-- `report.tsv`  
-- `report.txt`  
-- `transposed_report.tex`  
-- `transposed_report.tsv`  
-- `transposed_report.txt`  
-- `quast.log`  
-- `icarus.html`  
-- `icarus_viewers/contig_size_viewer.html`  
 - `basic_stats/GCA_005876975.1_DoreRS1_genomic_GC_content_plot.pdf`  
 - `basic_stats/GC_content_plot.pdf`  
 - `basic_stats/Nx_plot.pdf`  
@@ -188,9 +179,15 @@ trimmomatic PE -phred33 -threads 8 \
 
 ---
 
-### 3a (loop script as used) — Trimmomatic v0.39
 
-<details>
+
+
+
+---
+
+### 3b. Trimming: Evogen RNA-Seq Reads
+
+<<details>
 <summary><strong>Command</strong></summary>
 
 ```bash
@@ -245,80 +242,19 @@ done
 
 **Output (path):** `evo_gen_rna_seq_reads/trimmed_reads_and_QC/`  
 - `A3_0TLl19_l1_1.trim.paired.fq.gz`  
-- `A3_0TLl19_l1_1.trim.unpaired.fq.gz`  
 - `A3_0TLl19_l1_2.trim.paired.fq.gz`  
-- `A3_0TLl19_l1_2.trim.unpaired.fq.gz`  
 - `A4_0TP114_l1_1.trim.paired.fq.gz`  
-- `A4_0TP114_l1_1.trim.unpaired.fq.gz`  
 - `A4_0TP114_l1_2.trim.paired.fq.gz`  
-- `A4_0TP114_l1_2.trim.unpaired.fq.gz`  
 - `B3_0TFl19_l1_1.trim.paired.fq.gz`  
-- `B3_0TFl19_l1_1.trim.unpaired.fq.gz`  
 - `B3_0TFl19_l1_2.trim.paired.fq.gz`  
-- `B3_0TFl19_l1_2.trim.unpaired.fq.gz`  
 - `B4_0TMl19_l1_1.trim.paired.fq.gz`  
-- `B4_0TMl19_l1_1.trim.unpaired.fq.gz`  
 - `B4_0TMl19_l1_2.trim.paired.fq.gz`  
-- `B4_0TMl19_l1_2.trim.unpaired.fq.gz`  
 - `Im1611_GCCAAT_L005_R1.trim.paired.fq.gz`  
-- `Im1611_GCCAAT_L005_R1.trim.unpaired.fq.gz`  
 - `Im1611_GCCAAT_L005_R2.trim.paired.fq.gz`  
-- `Im1611_GCCAAT_L005_R2.trim.unpaired.fq.gz`  
-- `FASTQC/A3_0TLl19_l1_1.trim.paired_fastqc.html`  
-- `FASTQC/A3_0TLl19_l1_1.trim.paired_fastqc.zip`  
-- `FASTQC/A3_0TLl19_l1_2.trim.paired_fastqc.html`  
-- `FASTQC/A3_0TLl19_l1_2.trim.paired_fastqc.zip`  
-- `FASTQC/A4_0TP114_l1_1.trim.paired_fastqc.html`  
-- `FASTQC/A4_0TP114_l1_1.trim.paired_fastqc.zip`  
-- `FASTQC/A4_0TP114_l1_2.trim.paired_fastqc.html`  
-- `FASTQC/A4_0TP114_l1_2.trim.paired_fastqc.zip`  
-- `FASTQC/B3_0TFl19_l1_1.trim.paired_fastqc.html`  
-- `FASTQC/B3_0TFl19_l1_1.trim.paired_fastqc.zip`  
-- `FASTQC/B3_0TFl19_l1_2.trim.paired_fastqc.html`  
-- `FASTQC/B3_0TFl19_l1_2.trim.paired_fastqc.zip`  
-- `FASTQC/B4_0TMl19_l1_1.trim.paired_fastqc.html`  
-- `FASTQC/B4_0TMl19_l1_1.trim.paired_fastqc.zip`  
-- `FASTQC/B4_0TMl19_l1_2.trim.paired_fastqc.html`  
-- `FASTQC/B4_0TMl19_l1_2.trim.paired_fastqc.zip`  
-- `FASTQC/Im1611_GCCAAT_L005_R1.trim.paired_fastqc.html`  
-- `FASTQC/Im1611_GCCAAT_L005_R1.trim.paired_fastqc.zip`  
-- `FASTQC/Im1611_GCCAAT_L005_R2.trim.paired_fastqc.html`  
-- `FASTQC/Im1611_GCCAAT_L005_R2.trim.paired_fastqc.zip`
-
-**Results:**  
-see table below
-
-**Notes:**  
-Adapter file = `custom-adapters.fa`
-
----
-
-### 3b. Trimming: Evogen RNA-Seq Reads
-
-<details>
-<summary><strong>Trimmomatic v0.39 — Command</strong></summary>
-
-```bash
-# Applied to all samples (scripted loop)
-trimmomatic PE -phred33 -threads 8 A3_0TLl19_l1_1.fq.gz A3_0TLl19_l1_2.fq.gz \
-  A3_0TLl19_l1_1.trim.paired.fq.gz A3_0TLl19_l1_1.trim.unpaired.fq.gz \
-  A3_0TLl19_l1_2.trim.paired.fq.gz A3_0TLl19_l1_2.trim.unpaired.fq.gz \
-  ILLUMINACLIP:custom-adapters.fa:2:30:10 HEADCROP:10 LEADING:3 TRAILING:3 \
-  SLIDINGWINDOW:4:15 MINLEN:36
-```
-</details>
 
 **Output (path):** `evo_gen_rna_seq_reads/trimmed_reads_and_QC/` (files listed above)
 
-**Results:**  
-
-**Adapter sequences used:**  
-- AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT  
-- AGATCGGAAGAGCACACGTCTGAACTCCAGTCA  
-- CTGTCTCTTATACACATCT  
-- AGATGTGTATAAGAGACAG  
-
-**Results by sample:**
+**Results:**
 
 | Sample             | Input Pairs | Paired Surviving | Forward Only | Reverse Only | Dropped | % Surviving |
 |--------------------|-------------|------------------|--------------|---------------|---------|-------------|
@@ -329,7 +265,7 @@ trimmomatic PE -phred33 -threads 8 A3_0TLl19_l1_1.fq.gz A3_0TLl19_l1_2.fq.gz \
 | Im1611_GCCAAT      | 38,907,278  | 37,145,203       | 1,334,893    | 275,618       | 151,564 | 95.47%      |
 
 **Notes:**  
-Let me know if you want the remaining steps restructured in the same clarified style.
+Adapter file = `custom-adapters.fa`
 
 ---
 
@@ -401,8 +337,8 @@ bwa-mem2 mem -t 8 -v 3 -a \
 </details>
 
 **Output (path):**  
-- `alignmentsR1.sam`  
-- `alignmentsR2.sam`
+- `alignmentsR1.sam FIX THIS`  
+- `alignmentsR2.sam FIX THIS`
 
 **Results:**  
 
@@ -429,7 +365,10 @@ polypolish polish \
 - `GCA_005876975.1_DoreRS1_genomic_polished.flagstat`
 
 **Results:**  
-Combined flagstat: Total 307,086,568 • Mapped 228,784,008 (74.50 %) • Properly-paired 218,148,562 (71.11 %)
+Combined flagstat: 
+Total 307,086,568
+Mapped 228,784,008 (74.50 %)
+Properly-paired 218,148,562 (71.11 %)
 
 **Notes:**  
 
@@ -447,55 +386,15 @@ RepeatMasker -pa 12 -xsmall -e hmmer -species 7215 \
 </details>
 
 **Output (path):** `ext_long_read_assembly/repeatmasked_polished/`  
-- `GCA_005876975.1_DoreRS1_genomic_polished.fasta.masked.clean.fa`  
-- `repeatmasked/GCA_005876975.1_DoreRS1_genomic_polished.fasta`  
-- `repeatmasked/GCA_005876975.1_DoreRS1_genomic_polished.fasta.cat.gz`  
+- `GCA_005876975.1_DoreRS1_genomic_polished.fasta.masked.clean.fa`    
 - `repeatmasked/GCA_005876975.1_DoreRS1_genomic_polished.fasta.masked`  
 - `repeatmasked/GCA_005876975.1_DoreRS1_genomic_polished.fasta.out`  
 - `repeatmasked/GCA_005876975.1_DoreRS1_genomic_polished.fasta.tbl`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta.cat.all.gz`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-7.masked`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-7.tmp.simple1`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-8.masked`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-8.tmp.simple1`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-9.masked`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-9.tmp.simple1`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-10.masked`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-10.tmp.simple1`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-11.masked`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-11.tmp.simple1`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-12.masked`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-12.tmp.simple1`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-13.masked`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-13.tmp.simple1`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-14.masked`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-14.tmp.simple1`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-15.masked`  
-- `repeatmasked/RM_2261.WedJul162235212025/GCA_005876975.1_DoreRS1_genomic_polished.fasta_batch-15.tmp.simple1`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730537-2308.err`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730537-2308.out`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730537-2309.err`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730537-2309.out`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730537-2310.err`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730537-2310.out`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730570-2382.err`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730570-2382.out`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730570-2383.err`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730570-2383.out`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730570-2384.err`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730570-2384.out`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730570-2385.err`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730570-2385.out`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730593-2408.err`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730593-2408.out`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730601-2430.err`  
-- `repeatmasked/RM_2261.WedJul162235212025/hmmerResults-1752730601-2430.out`
 
 **Results:**  
 
 **Notes:**  
-- `-species 7215` specifies *Drosophila* to use the appropriate repeat library for the genus.  
+- `-species 7215` specifies *Drosophila* 
 - `-pa 12` was used to increase parallelism and reduce runtime, following the message prompt that detected available CPUs.
 
 ---
@@ -537,7 +436,9 @@ done
 **Output (path):** `ext_long_read_assembly/star_repeatmasked_polished/STAR_output/`  
 - `STAR_output_A3_0TLl19_l1_1_Aligned.sortedByCoord.out.bam`  
 - `STAR_output_A4_0TP114_l1_1_Aligned.sortedByCoord.out.bam`  
-*(plus corresponding outputs for other samples as produced by the loop)*
+- `STAR_output_B3_0TFl19_l1_1_Aligned.sortedByCoord.out.bam`  
+- `STAR_output_B4_0TMl19_l1_1_Aligned.sortedByCoord.out.bam`  
+- `STAR_output_Im1611_GCCAAT_L005_R1_Aligned.sortedByCoord.out.bam`
 
 **Results:**  
 - Uniquely mapped reads ≈ 88.45 %  
@@ -556,7 +457,7 @@ done
 braker.pl \
   --genome=ext_long_read_assembly/repeatmasked_polished/GCA_005876975.1_DoreRS1_genomic_polished.fasta.masked.clean.fa \
   --bam=ext_long_read_assembly/star_repeatmasked_polished/STAR_output_*_Aligned.sortedByCoord.out.bam \
-  --softmasking \ BE SURE TO INCLUDE OUTPUT (PATH) RESULTS AND NOTES FOR EACH SECTION1!!!!!! SINGLE CODE BLOCK!~!!!! INCLUDE THE SECTIONS!!!
+  --softmasking \
   --species=Drosophila_orena_RS1 \
   --threads 9 --gff3
 ```
@@ -567,29 +468,6 @@ braker.pl \
 - `braker.gff3`  
 - `braker.codingseq`  
 - `braker.aa`  
-- `braker.log`  
-- `bam_header.map`  
-- `genome_header.map`  
-- `hintsfile.gff`  
-- `errors/aa2nonred.stderr`  
-- `what-to-cite.txt`  
-- `Augustus/augustus.hints.aa`  
-- `Augustus/augustus.hints.codingseq`  
-- `Augustus/augustus.hints.gff3`  
-- `Augustus/augustus.hints.gtf`  
-- `GeneMark-ET/genemark.f.multi_anchored.gtf`  
-- `GeneMark-ET/genemark.gtf`  
-- `GeneMark-ET/gmhmm.mod`  
-- `species/Drosophila_orena_RS1/Drosophila_orena_RS1_exon_probs.pbl`  
-- `species/Drosophila_orena_RS1/Drosophila_orena_RS1_igenic_probs.pbl`  
-- `species/Drosophila_orena_RS1/Drosophila_orena_RS1_intron_probs.pbl`  
-- `species/Drosophila_orena_RS1/Drosophila_orena_RS1_metapars.cfg`  
-- `species/Drosophila_orena_RS1/Drosophila_orena_RS1_metapars.cgp.cfg`  
-- `species/Drosophila_orena_RS1/Drosophila_orena_RS1_metapars.utr.cfg`  
-- `species/Drosophila_orena_RS1/Drosophila_orena_RS1_parameters.cfg`  
-- `species/Drosophila_orena_RS1/Drosophila_orena_RS1_parameters.cfg.orig1`  
-- `species/Drosophila_orena_RS1/Drosophila_orena_RS1_weightmatrix.txt`  
-- `species/Drosophila_orena_RS1/ex1.cfg`
 
 **Results:**  
 
