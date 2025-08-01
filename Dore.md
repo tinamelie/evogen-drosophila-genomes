@@ -127,8 +127,6 @@ fastqc -o evo_gen_rna_seq_reads/raw_reads_and_QC/FASTQC \
 **Results:**  
 
 **Notes:**  
-- Genomic: `evogen_short_reads/raw_reads_and_QC/FASTQC/`  
-- RNA-seq: `evo_gen_rna_seq_reads/raw_reads_and_QC/FASTQC/NAME.pdf` images such as `Images/per_base_quality.png`
 
 ---
 
