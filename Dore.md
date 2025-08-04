@@ -128,8 +128,8 @@ fastqc -o evogen_short_reads/raw_reads_and_QC/FASTQC \
 </details>
 
 **Reports:** `evogen_short_reads/raw_reads_and_QC/FASTQC/`  
-- [`C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.html)  
-- [`C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html)  
+- [`C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.html)  
+- [`C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html)
 
 **Notes:**  
 The FastQC reports for both R1 and R2 show generally high-quality data. The first ~10 bases in both reads show lower quality and biased base composition, which is typical and was handled by trimming with `HEADCROP:10`. R2 showed a minor “per-tile sequence quality” warning, indicating slight unevenness across the flow cell, but nothing critical. No adapter contamination was detected. Post-trimming reads were clean and suitable for mapping.
@@ -149,16 +149,17 @@ fastqc -o evo_gen_rna_seq_reads/raw_reads_and_QC/FASTQC \
 </details>
 
 **Reports:** `evo_gen_rna_seq_reads/raw_reads_and_QC/FASTQC/`  
-- [`A3_0TLl19_l1_1_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A3_0TLl19_l1_1_fastqc.html)  
-- [`A3_0TLl19_l1_2_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A3_0TLl19_l1_2_fastqc.html)  
-- [`A4_0TP114_l1_1_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A4_0TP114_l1_1_fastqc.html)  
-- [`A4_0TP114_l1_2_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A4_0TP114_l1_2_fastqc.html)  
-- [`B3_0TFl19_l1_1_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B3_0TFl19_l1_1_fastqc.html)  
-- [`B3_0TFl19_l1_2_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B3_0TFl19_l1_2_fastqc.html)  
-- [`B4_0TMl19_l1_1_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B4_0TMl19_l1_1_fastqc.html)  
-- [`B4_0TMl19_l1_2_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B4_0TMl19_l1_2_fastqc.html)  
-- [`Im1611_GCCAAT_L005_R1_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/Im1611_GCCAAT_L005_R1_fastqc.html)  
-- [`Im1611_GCCAAT_L005_R2_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/Im1611_GCCAAT_L005_R2_fastqc.html)  
+- [`A3_0TLl19_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A3_0TLl19_l1_1_fastqc.html)  
+- [`A3_0TLl19_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A3_0TLl19_l1_2_fastqc.html)  
+- [`A4_0TP114_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A4_0TP114_l1_1_fastqc.html)  
+- [`A4_0TP114_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A4_0TP114_l1_2_fastqc.html)  
+- [`B3_0TFl19_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B3_0TFl19_l1_1_fastqc.html)  
+- [`B3_0TFl19_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B3_0TFl19_l1_2_fastqc.html)  
+- [`B4_0TMl19_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B4_0TMl19_l1_1_fastqc.html)  
+- [`B4_0TMl19_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B4_0TMl19_l1_2_fastqc.html)  
+- [`Im1611_GCCAAT_L005_R1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/Im1611_GCCAAT_L005_R1_fastqc.html)  
+- [`Im1611_GCCAAT_L005_R2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/Im1611_GCCAAT_L005_R2_fastqc.html)  
+
 
 **Notes:**  
 RNA-seq reads showed typical quality patterns, including lower quality and base composition bias at the start of reads. They have high overall quality, with the usual lower scores and base bias in the first ~10 bases. This justified the use of `HEADCROP:10`. No major issues or adapter content was detected, and all samples passed quality thresholds for downstream use.
@@ -307,8 +308,9 @@ fastqc -o evogen_short_reads/trimmed_reads_and_QC/FASTQC \
 
 **Key output:**  
 - `evogen_short_reads/trimmed_reads_and_QC/FASTQC/`  
-  - [`C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R1_paired_fastqc.html)  
-  - [`C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R2_paired_fastqc.html)  
+ - [`C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R1_paired_fastqc.html)  
+ - [`C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R2_paired_fastqc.html)  
+
 
 **Notes**
 Post-trimming short read quality looks good. Quality scores are high across the read length, and the base bias at the start is gone. No adapter contamination is present. GC content and duplication levels are within expected ranges.
@@ -330,16 +332,17 @@ fastqc -o evo_gen_rna_seq_reads/trimmed_reads_and_QC/FASTQC \
 
 **Key output:**  
 - `evo_gen_rna_seq_reads/trimmed_reads_and_QC/FASTQC/`  
-  - [`A3_0TLl19_l1_1.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A3_0TLl19_l1_1.trim.paired_fastqc.html)  
-  - [`A3_0TLl19_l1_2.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A3_0TLl19_l1_2.trim.paired_fastqc.html)  
-  - [`A4_0TP114_l1_1.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A4_0TP114_l1_1.trim.paired_fastqc.html)  
-  - [`A4_0TP114_l1_2.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A4_0TP114_l1_2.trim.paired_fastqc.html)  
-  - [`B3_0TFl19_l1_1.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B3_0TFl19_l1_1.trim.paired_fastqc.html)  
-  - [`B3_0TFl19_l1_2.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B3_0TFl19_l1_2.trim.paired_fastqc.html)  
-  - [`B4_0TMl19_l1_1.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B4_0TMl19_l1_1.trim.paired_fastqc.html)  
-  - [`B4_0TMl19_l1_2.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B4_0TMl19_l1_2.trim.paired_fastqc.html)  
-  - [`Im1611_GCCAAT_L005_R1.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/Im1611_GCCAAT_L005_R1.trim.paired_fastqc.html)  
-  - [`Im1611_GCCAAT_L005_R2.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/Im1611_GCCAAT_L005_R2.trim.paired_fastqc.html)  
+ - [`A3_0TLl19_l1_1.trim.paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A3_0TLl19_l1_1.trim.paired_fastqc.html)  
+ - [`A3_0TLl19_l1_2.trim.paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A3_0TLl19_l1_2.trim.paired_fastqc.html)  
+ - [`A4_0TP114_l1_1.trim.paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A4_0TP114_l1_1.trim.paired_fastqc.html)  
+ - [`A4_0TP114_l1_2.trim.paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A4_0TP114_l1_2.trim.paired_fastqc.html)  
+ - [`B3_0TFl19_l1_1.trim.paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B3_0TFl19_l1_1.trim.paired_fastqc.html)  
+ - [`B3_0TFl19_l1_2.trim.paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B3_0TFl19_l1_2.trim.paired_fastqc.html)  
+ - [`B4_0TMl19_l1_1.trim.paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B4_0TMl19_l1_1.trim.paired_fastqc.html)  
+ - [`B4_0TMl19_l1_2.trim.paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B4_0TMl19_l1_2.trim.paired_fastqc.html)  
+ - [`Im1611_GCCAAT_L005_R1.trim.paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/Im1611_GCCAAT_L005_R1.trim.paired_fastqc.html)  
+ - [`Im1611_GCCAAT_L005_R2.trim.paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/Im1611_GCCAAT_L005_R2.trim.paired_fastqc.html)  
+
 
 **Notes:**  
 
