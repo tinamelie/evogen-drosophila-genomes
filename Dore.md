@@ -307,7 +307,7 @@ fastqc -o evogen_short_reads/trimmed_reads_and_QC/FASTQC \
 
 
 **Notes**
-Post-trimming short read quality looks good. Quality scores are high across the read length, and the base bias at the start is gone. No adapter contamination is present. GC content and duplication levels are within expected ranges.
+Post-trimming quality scores are high across the read length, and the base bias at the start is gone. No adapter contamination is present. GC content and duplication levels are within expected ranges.
 
 ### 4b. RNA-seq Read QC (Post-trimming)
 
@@ -542,7 +542,7 @@ samtools merge -@8 star_output_merged.bam STAR_output_A3_0TLl19_l1_1_Aligned.sor
 - `STAR_output/STAR_output_B3_0TFl19_l1_1_Aligned.sortedByCoord.out.bam`  
 - `STAR_output/STAR_output_B4_0TMl19_l1_1_Aligned.sortedByCoord.out.bam`  
 - `STAR_output/STAR_output_Im1611_GCCAAT_L005_R1_Aligned.sortedByCoord.out.bam`
-- `merged_STAR_output/star_output_merged.bam
+- `merged_STAR_output/star_output_merged.bam`
 - `STAR_output/logs/STAR_output_[sample]_Log.final.out` (one per sample, contains alignment stats)
 
 **Results summary:**  
@@ -557,7 +557,7 @@ samtools merge -@8 star_output_merged.bam STAR_output_A3_0TLl19_l1_1_Aligned.sor
 ```
 
 **Notes:**  
-- All RNA-seq samples were mapped successfully to the masked and polished genome using STAR. The uniquely mapped read percentage ranged from ~86% to ~92%, which is good and indicates high-quality alignment. Multi-mapping reads ranged from ~5% to ~10%, which is expected given repetitive regions in the genome. Very few reads were unmapped. Mismatch rates were all below 0.6%, which is low and typical for good-quality RNA-seq data. About 88–93% of reads aligned to annotated splice junctions, which is consistent with correct intron-exon structure being captured. Alignment quality was high and the data are suitable for annotation.
+- All RNA-seq samples were mapped successfully to the masked and polished genome using STAR. The uniquely mapped read percentage ranged from ~86% to ~92%, which indicates high-quality alignment. Multi-mapping reads ranged from ~5% to ~10%, which is expected given repetitive regions in the genome. Very few reads were unmapped. Mismatch rates were all below 0.6%, which is low and typical for good-quality RNA-seq data. About 88–93% of reads aligned to annotated splice junctions, which is consistent with correct intron-exon structure being captured. Alignment quality was high and the data are suitable for annotation.
 
 - The individual BAM files were merged into a single file before running BRAKER.
 
