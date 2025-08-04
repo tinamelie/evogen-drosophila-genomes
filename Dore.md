@@ -73,7 +73,7 @@ L90                         137
 ```
 **Notes:**  
 
-The QUAST results show that the genome assembly is high quality and highly contiguous. All 422 contigs are ≥10 kb, with a total assembled length of ~183 Mb, consistent with _Drosophila_ genome size expectations. The N50 is 5.3 Mb, meaning half the genome is contained in contigs of that length or longer indicating long, uninterrupted sequence regions. The largest contig is ~17 Mb, and only 8 contigs are needed to reach 50% of the genome length (L50 = 8), which is excellent. The GC content is 41.2%, which is typical for Drosophila and suggests no major contamination. There are zero ambiguous bases (N’s), indicating that the assembly is gap-free and likely already polished.
+The QUAST results show that the genome assembly is high quality and highly contiguous. All 422 contigs are ≥10 kb, with a total assembled length of ~183 Mb, consistent with _Drosophila_ genome size expectations. The N50 is 5.3 Mb, meaning half the genome is contained in contigs of that length or longer indicating long, uninterrupted sequence regions. The largest contig is ~17 Mb, and only 8 contigs are needed to reach 50% of the genome length (L50 = 8), which is excellent. The GC content is 41.2%, which is typical for _Drosophila_ and suggests no major contamination. There are zero ambiguous bases (N’s), indicating that the assembly is gap-free and likely already polished.
 
 ---
 ### 1b. BUSCO v5.8.3 (lineage: drosophila_odb12)
@@ -203,9 +203,9 @@ Dropped: 5562148 (3.15%)
 ```
 
 **Notes:**
-The short reads were trimmed using a sliding window approach to clean up any low-quality regions near the ends of the reads. The SLIDINGWINDOW:4:30 setting means it looks at each 4-base window and trims once the average quality in a window drops below 30. This is a strict setting to make sure only high-quality bases are kept.
+The short reads were trimmed using a sliding window approach to clean up any low-quality regions near the ends of the reads. The SLIDINGWINDOW:4:30 setting means it looks at each 4-base window and trims once the average quality in a window drops below 30. This is a somewhat strict setting to make sure only high-quality bases are kept - appropriate for polishing purposes rather than assembly.
 
-Trimming worked well—about 87% of read pairs survived, which is a good result. A small number of reads were trimmed too short or had quality issues and were dropped or left as single-end. This is normal and expected. The cleaned reads were used for mapping.
+Trimming worked well—about 87% of read pairs survived. A small number of reads were trimmed too short or had quality issues and were dropped or left as single-end. This is normal and expected. The cleaned reads were used for mapping.
 
 ---
 
@@ -264,7 +264,7 @@ done
 ```
 </details>
 
-**Output:** `evo_gen_rna_seq_reads/trimmed_reads_and_QC/`  
+**Key output:** `evo_gen_rna_seq_reads/trimmed_reads_and_QC/`  
 - `A3_0TLl19_l1_1.trim.paired.fq.gz`  
 - `A3_0TLl19_l1_2.trim.paired.fq.gz`  
 - `A4_0TP114_l1_1.trim.paired.fq.gz`  
@@ -306,8 +306,7 @@ fastqc -o evogen_short_reads/trimmed_reads_and_QC/FASTQC \
 ```
 </details>
 
-**Key output:**  
-- `evogen_short_reads/trimmed_reads_and_QC/FASTQC/`  
+**Reports:** `evogen_short_reads/trimmed_reads_and_QC/FASTQC/`  
  - [`C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R1_paired_fastqc.html)  
  - [`C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R2_paired_fastqc.html)  
 
@@ -330,8 +329,7 @@ fastqc -o evo_gen_rna_seq_reads/trimmed_reads_and_QC/FASTQC \
 ```
 </details>
 
-**Key output:**  
-- `evo_gen_rna_seq_reads/trimmed_reads_and_QC/FASTQC/`  
+**Reports:** `evo_gen_rna_seq_reads/trimmed_reads_and_QC/FASTQC/`  
  - [`A3_0TLl19_l1_1.trim.paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A3_0TLl19_l1_1.trim.paired_fastqc.html)  
  - [`A3_0TLl19_l1_2.trim.paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A3_0TLl19_l1_2.trim.paired_fastqc.html)  
  - [`A4_0TP114_l1_1.trim.paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A4_0TP114_l1_1.trim.paired_fastqc.html)  
@@ -396,7 +394,7 @@ polypolish polish \
 ```
 </details>
 
-**Output:** `ext_long_read_assembly/polished_and_QC/`  
+**Key output:** `ext_long_read_assembly/polished_and_QC/`  
 - `GCA_005876975.1_DoreRS1_genomic_polished.fasta`  
 
 - `GCA_005876975.1_DoreRS1_genomic_polished.flagstat`:
@@ -505,7 +503,7 @@ run with nhmmscan version 3.4 (Aug 2023)
 FamDB: HMM-Dfam_3.9
 ```
 **Notes:**  
-- RepeatMasker searched the polished genome and tagged repeat sequences using fruit‑fly repeat data. It marked 30% of the genome as repetitive, mostly LTR retroelements like Gypsy, plus some LINEs and DNA transposons. Those repeats were "soft masked" (converted to lowercase) so the sequence remains intact but aware of repeats. That version was fed into STAR for RNA‑seq mapping. Everything ran as expected; no errors and masking worked correctly.
+- RepeatMasker marked 30% of the genome as repetitive, mostly LTR retroelements like Gypsy, plus some LINEs and DNA transposons. Those repeats were "soft masked" (converted to lowercase) so the sequence remains intact but aware of repeats. That version was fed into STAR for RNA‑seq mapping. Everything ran as expected; no errors and masking worked correctly.
 
 - `-pa 12` following the message prompt that detected available CPUs.
 - -species 7215 tells RepeatMasker to use repeat families specific to Drosophila and related species.
