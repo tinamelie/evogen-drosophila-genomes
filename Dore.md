@@ -695,3 +695,4 @@ GFFCompare was used to compare gene predictions from BRAKER with and without pro
   - Sensitivity was higher (72.1%), but precision was lower (63.1%).
 
 This suggests that RNA-only predictions identify more genes, but with lower agreement to the reference. Protein evidence makes the predictions more conservative, possibly filtering out weaker or ambiguous signals. The RNA-only run may capture novel or divergent features, but also risks including spurious or less reliable models.
+
