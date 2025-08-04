@@ -40,44 +40,58 @@ quast.py ext_long_read_assembly/raw_and_QC/GCA_005876975.1_DoreRS1_genomic.fna \
 ```
 </details>
 
-**Output:** `ext_long_read_assembly/raw_and_QC/quast_results/`  
-- `report.html`  
-- `report.pdf`  
-- `basic_stats/GCA_005876975.1_DoreRS1_genomic_GC_content_plot.pdf`  
-- `basic_stats/GC_content_plot.pdf`  
-- `basic_stats/Nx_plot.pdf`  
-- `basic_stats/cumulative_plot.pdf`  
+**Key output:** `ext_long_read_assembly/raw_and_QC/quast_results/`  
+- [report.pdf](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/quast-report.pdf) 
 
-**Results:**  
-- N50: 5,273,554  
-- L50: 8  
-- GC content: 41.21%  
-- Total length: 182,891,478
+- report.txt:
+```
+All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
 
+Assembly                    GCA_005876975.1_DoreRS1_genomic
+# contigs (>= 0 bp)         422                            
+# contigs (>= 1000 bp)      422                            
+# contigs (>= 5000 bp)      422                            
+# contigs (>= 10000 bp)     422                            
+# contigs (>= 25000 bp)     419                            
+# contigs (>= 50000 bp)     346                            
+Total length (>= 0 bp)      182891478                      
+Total length (>= 1000 bp)   182891478                      
+Total length (>= 5000 bp)   182891478                      
+Total length (>= 10000 bp)  182891478                      
+Total length (>= 25000 bp)  182828126                      
+Total length (>= 50000 bp)  179891206                      
+# contigs                   422                            
+Largest contig              17040013                       
+Total length                182891478                      
+GC (%)                      41.21                          
+N50                         5273554                        
+N90                         107271                         
+auN                         6929303.7                      
+L50                         8                              
+L90                         137                            
+# N's per 100 kbp           0.00                           
+```
 **Notes:**  
-- Images also referenced inline:  
-  - `Nx_plot.pdf` ![Nx_plot](ext_long_read_assembly/raw_and_QC/quast_results/Nx_plot.png)  
-  - `GC_content_plot.pdf` ![GC_content_plot](ext_long_read_assembly/raw_and_QC/quast_results/GC_content_plot.png)
 
 ---
 
-### 1b. BUSCO v5.4.2 (lineage: drosophila_odb12)
+### 1b. BUSCO v5.8.3 (lineage: drosophila_odb12)
 
 <details>
 <summary><strong>Command</strong></summary>
 
 ```bash
 busco -i ext_long_read_assembly/raw_and_QC/GCA_005876975.1_DoreRS1_genomic.fna \
-  -l drosophila_odb12 -m genome -o dore2
+  -l drosophila_odb12 -m genome -o Dore_BUSCO
 ```
 </details>
 
-**Output:** `ext_long_read_assembly/raw_and_QC/run_dore2/`  
+**Key output:** `ext_long_read_assembly/raw_and_QC/busco_results_summary/`  
 - `busco_results_summary/full_table.tsv`  
 - `busco_results_summary/missing_busco_list.tsv`  
 - `busco_results_summary/short_summary.txt`
 
-**Results (BUSCO Output):**
+**Results summary:**
 ```
 C:98.4%[S:93.8%,D:4.7%],F:0.1%,M:1.5%,n:9348,E:6.4%
 9202    Complete BUSCOs (C)    (of which 592 contain internal stop codons)
@@ -90,12 +104,14 @@ C:98.4%[S:93.8%,D:4.7%],F:0.1%,M:1.5%,n:9348,E:6.4%
 
 **Notes:** 
 
+BUSCO was run on NERSC after being prohibitively slow on Mac Mini. BUSCO run has not been attempted on Mac Studio.
+
 ---
 
-## 2. Read QC (FASTQC)
+## 2. Read QC (Evogen Short Reads and RNA Reads)
 
 <details>
-<summary><strong>FASTQC v0.11.x — Commands</strong></summary>
+<summary><strong>FASTQC v0.12.1 — Commands</strong></summary>
 
 ```bash
 # Genomic short reads
@@ -108,34 +124,37 @@ fastqc -o evo_gen_rna_seq_reads/raw_reads_and_QC/FASTQC \
 ```
 </details>
 
-**Output:**  
-- Genomic QC reports: `evogen_short_reads/raw_reads_and_QC/FASTQC/`  
-  - `C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.html`  
-  - `C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html`  
+**Key output:**  
+- Short read QC reports: `evogen_short_reads/raw_reads_and_QC/FASTQC/`  
+    - [`C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.html)
+    - [`C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html)
+ 
 - RNA-seq QC reports: `evo_gen_rna_seq_reads/raw_reads_and_QC/FASTQC/`  
-  - `A3_0TLl19_l1_1_fastqc.html`  
-  - `A3_0TLl19_l1_2_fastqc.html`  
-  - `A4_0TP114_l1_1_fastqc.html`  
-  - `A4_0TP114_l1_2_fastqc.html`  
-  - `B3_0TFl19_l1_1_fastqc.html`  
-  - `B3_0TFl19_l1_2_fastqc.html`  
-  - `B4_0TMl19_l1_1_fastqc.html`  
-  - `B4_0TMl19_l1_2_fastqc.html`  
-  - `Im1611_GCCAAT_L005_R1_fastqc.html`  
-  - `Im1611_GCCAAT_L005_R2_fastqc.html`  
+    - [`A3_0TLl19_l1_1_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A3_0TLl19_l1_1_fastqc.html)
+    - [`A3_0TLl19_l1_2_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A3_0TLl19_l1_2_fastqc.html)
+    - [`A4_0TP114_l1_1_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A4_0TP114_l1_1_fastqc.html)
+    - [`A4_0TP114_l1_2_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A4_0TP114_l1_2_fastqc.html)
+    - [`B3_0TFl19_l1_1_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B3_0TFl19_l1_1_fastqc.html)
+    - [`B3_0TFl19_l1_2_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B3_0TFl19_l1_2_fastqc.html)
+    - [`B4_0TMl19_l1_1_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B4_0TMl19_l1_1_fastqc.html)
+    - [`B4_0TMl19_l1_2_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B4_0TMl19_l1_2_fastqc.html)
+    - [`Im1611_GCCAAT_L005_R1_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/Im1611_GCCAAT_L005_R1_fastqc.html)
+    - [`Im1611_GCCAAT_L005_R2_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/Im1611_GCCAAT_L005_R2_fastqc.html)
 
 **Results:**  
 
 **Notes:**  
 
----
+mand<Based on QC reports, Trimmomatic parameters were selected, specifically headcrop X. First X reads were consistently noisy, and headcrop x was selected. Sliding window was also maintiained 
 
+
+---
 ## 3. Trimming
 
-### 3a. Evogen Short Reads — Trimmomatic v0.39 (single-sample command)
+### 3a. Evogen Short Reads
 
 <details>
-<summary><strong>Command</strong></summary>
+<summary><strong>Trimmomatic v0.39</strong></summary>
 
 ```bash
 trimmomatic PE -phred33 -threads 8 \
@@ -149,25 +168,23 @@ trimmomatic PE -phred33 -threads 8 \
 ```
 </details>
 
-**Output:** `evogen_short_reads/trimmed_reads_and_QC/`  
+**Key output:** `evogen_short_reads/trimmed_reads_and_QC/`  
 - `C3F0NACXX_PG0409_02A02_H1_L006_R1_paired.fq.gz`  
 - `C3F0NACXX_PG0409_02A02_H1_L006_R1_unpaired.fq.gz`  
 - `C3F0NACXX_PG0409_02A02_H1_L006_R2_paired.fq.gz`  
 - `C3F0NACXX_PG0409_02A02_H1_L006_R2_unpaired.fq.gz`  
-- `FASTQC/C3F0NACXX_PG0409_02A02_H1_L006_R1_paired_fastqc.html`  
-- `FASTQC/C3F0NACXX_PG0409_02A02_H1_L006_R1_paired_fastqc.zip`
 
-**Results:**  
-- Input pairs: 176,570,473  
-- Paired surviving: 153,387,586 (86.87%)
+**Results summary:**  
+```
+Input Read Pairs: 176570473
+Both Surviving: 153387586 (86.87%)
+Forward Only Surviving: 14747991 (8.35%)
+Reverse Only Surviving: 2872748 (1.63%)
+Dropped: 5562148 (3.15%)
+```
 
-**Notes:** 
-
----
-
-
-
-
+**Notes:**
+Sliding window as selected REASON
 
 ---
 
@@ -187,13 +204,13 @@ raw_dir="evo_gen_rna_seq_reads/raw_reads_and_QC"
 out_dir="evo_gen_rna_seq_reads/trimmed_reads_and_QC"
 mkdir -p "${out_dir}"
 
-# Base sample identifiers (omit the read suffix)
+# Base sample identifiers
 samples=(
   "A3_0TLl19_l1"
   "A4_0TP114_l1"
   "B3_0TFl19_l1"
   "B4_0TMl19_l1"
-  "Im1611_GCCAAT_L005_R"   # note the trailing “_R” to handle _R1 / _R2
+  "Im1611_GCCAAT_L005_R"
 )
 
 for s in "${samples[@]}"; do
@@ -238,9 +255,7 @@ done
 - `Im1611_GCCAAT_L005_R1.trim.paired.fq.gz`  
 - `Im1611_GCCAAT_L005_R2.trim.paired.fq.gz`  
 
-**Output:** `evo_gen_rna_seq_reads/trimmed_reads_and_QC/` (files listed above)
-
-**Results:**
+**Results summary:**
 
 | Sample             | Input Pairs | Paired Surviving | Forward Only | Reverse Only | Dropped | % Surviving |
 |--------------------|-------------|------------------|--------------|---------------|---------|-------------|
@@ -251,14 +266,15 @@ done
 | Im1611_GCCAAT      | 38,907,278  | 37,145,203       | 1,334,893    | 275,618       | 151,564 | 95.47%      |
 
 **Notes:**  
-Adapter file = `custom-adapters.fa`
+Adapter file = `custom-adapters.fa` - explain this
+Orphaned reads for Im1611
 
 ---
 
-## 4. Post-trimming Read QC (FASTQC v0.11.x)
+## 4. Post-trimming Read QC
 
 <details>
-<summary><strong>Commands</strong></summary>
+<summary><strong>FASTQC v0.12.1</strong></summary>
 
 ```bash
 fastqc -o evogen_short_reads/trimmed_reads_and_QC/FASTQC \
@@ -269,25 +285,24 @@ fastqc -o evo_gen_rna_seq_reads/trimmed_reads_and_QC/FASTQC \
 ```
 </details>
 
-**Output:**  
-- `evogen_short_reads/trimmed_reads_and_QC/FASTQC/`  
-  - `C3F0NACXX_PG0409_02A02_H1_L006_R1_paired_fastqc.html`
-  - `C3F0NACXX_PG0409_02A02_H1_L006_R2_paired_fastqc.html` CHECK THIS  
+**Key output:**  
+- Short read QC reports: `evogen_short_reads/raw_reads_and_QC/FASTQC/`  
+  - [`C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.html)
+  - [`C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html)
 
-- `evo_gen_rna_seq_reads/trimmed_reads_and_QC/FASTQC/`  
-  - `A3_0TLl19_l1_1.trim.paired_fastqc.html`  
-  - `A3_0TLl19_l1_2.trim.paired_fastqc.html`  
-  - `A4_0TP114_l1_1.trim.paired_fastqc.html`  
-  - `A4_0TP114_l1_2.trim.paired_fastqc.html`  
-  - `B3_0TFl19_l1_1.trim.paired_fastqc.html`  
-  - `B3_0TFl19_l1_2.trim.paired_fastqc.html`  
-  - `B4_0TMl19_l1_1.trim.paired_fastqc.html`  
-  - `B4_0TMl19_l1_2.trim.paired_fastqc.html`  
-  - `Im1611_GCCAAT_L005_R1.trim.paired_fastqc.html`  
-  - `Im1611_GCCAAT_L005_R2.trim.paired_fastqc.html`  
+- RNA-seq QC reports: `evo_gen_rna_seq_reads/trimmed_reads_and_QC/FASTQC/`  
+  - [`A3_0TLl19_l1_1.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A3_0TLl19_l1_1.trim.paired_fastqc.html)  
+  - [`A3_0TLl19_l1_2.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A3_0TLl19_l1_2.trim.paired_fastqc.html)  
+  - [`A4_0TP114_l1_1.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A4_0TP114_l1_1.trim.paired_fastqc.html)  
+  - [`A4_0TP114_l1_2.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/A4_0TP114_l1_2.trim.paired_fastqc.html)  
+  - [`B3_0TFl19_l1_1.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B3_0TFl19_l1_1.trim.paired_fastqc.html)  
+  - [`B3_0TFl19_l1_2.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B3_0TFl19_l1_2.trim.paired_fastqc.html)  
+  - [`B4_0TMl19_l1_1.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B4_0TMl19_l1_1.trim.paired_fastqc.html)  
+  - [`B4_0TMl19_l1_2.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/B4_0TMl19_l1_2.trim.paired_fastqc.html)  
+  - [`Im1611_GCCAAT_L005_R1.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/Im1611_GCCAAT_L005_R1.trim.paired_fastqc.html)  
+  - [`Im1611_GCCAAT_L005_R2.trim.paired_fastqc.html`](https://github.com/tinamelie/evogen-drosophila-genomes/blob/main/reports/Dore/Im1611_GCCAAT_L005_R2.trim.paired_fastqc.html)
 
 **Results:**  
-Outputs: corresponding `.../FASTQC/` directories (raw + images preserved).
 
 **Notes:**  
 
@@ -339,31 +354,45 @@ polypolish polish \
 
 **Output:** `ext_long_read_assembly/polished_and_QC/`  
 - `GCA_005876975.1_DoreRS1_genomic_polished.fasta`  
-- `GCA_005876975.1_DoreRS1_genomic_polished.flagstat`
 
-**Results:**  
-Combined flagstat: \
-Total 307,086,568 \
-Mapped 228,784,008 (74.50 %) \
-Properly-paired 218,148,562 (71.11 %) \
-
+- `GCA_005876975.1_DoreRS1_genomic_polished.flagstat`:
+```307086568 + 0 in total (QC-passed reads + QC-failed reads)
+306775172 + 0 primary
+0 + 0 secondary
+311396 + 0 supplementary
+0 + 0 duplicates
+0 + 0 primary duplicates
+228784008 + 0 mapped (74.50% : N/A)
+228472612 + 0 primary mapped (74.48% : N/A)
+306775172 + 0 paired in sequencing
+153387586 + 0 read1
+153387586 + 0 read2
+218148562 + 0 properly paired (71.11% : N/A)
+223149292 + 0 with itself and mate mapped
+5323320 + 0 singletons (1.74% : N/A)
+3188996 + 0 with mate mapped to a different chr
+1682655 + 0 with mate mapped to a different chr (mapQ>=5)
+```
 **Notes:**  
 
 ---
 
-## 6. Repeat Masking — RepeatMasker v4.2.0 (+ HMMER 3.4)
+## 6. Repeat Masking
 
 <details>
-<summary><strong>Command</strong></summary>
+<summary><strong>RepeatMasker v4.2.0 (+ HMMER 3.4)</strong></summary>
 
 ```bash
+# Repeatmasker commands
 RepeatMasker -pa 12 -xsmall -e hmmer -species 7215 \
   ext_long_read_assembly/polished_and_QC/polished.fasta
+
+# Headers cleaned for STAR run
 ```
 </details>
 
 **Output:** `ext_long_read_assembly/repeatmasked_polished/`  
-- `GCA_005876975.1_DoreRS1_genomic_polished.fasta.masked.clean.fa`    
+- `GCA_005876975.1_DoreRS1_genomic_polished.fasta.masked.clean.fa`*    
 - `repeatmasked/GCA_005876975.1_DoreRS1_genomic_polished.fasta.masked`  
 - `repeatmasked/GCA_005876975.1_DoreRS1_genomic_polished.fasta.out`  
 - `repeatmasked/GCA_005876975.1_DoreRS1_genomic_polished.fasta.tbl`  
