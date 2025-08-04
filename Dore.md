@@ -1,4 +1,5 @@
-# RNA-seq and Genome Annotation Workflow
+# _Drosophila orena_: Genome polishing and gene prediction using RNA-seq and short reads
+
 **Note:** Click the arrow (▶) next to a program name to expand and view the commands.
 
 ## Project Directory Overview
