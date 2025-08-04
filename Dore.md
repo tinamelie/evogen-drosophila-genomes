@@ -506,7 +506,7 @@ FamDB: HMM-Dfam_3.9
 - RepeatMasker marked 30% of the genome as repetitive, mostly LTR retroelements like Gypsy, plus some LINEs and DNA transposons. Those repeats were "soft masked" (converted to lowercase) so the sequence remains intact but aware of repeats. That version was fed into STAR for RNA‑seq mapping. Everything ran as expected; no errors and masking worked correctly.
 
 - `-pa 12` following the message prompt that detected available CPUs.
-- -species 7215 tells RepeatMasker to use repeat families specific to Drosophila and related species.
+- -species 7215 tells RepeatMasker to use repeat families specific to _Drosophila_ and related species.
 
 ---
 
