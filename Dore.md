@@ -4,7 +4,7 @@
 
 ## Project Directory Overview
 ```text
-evo_gen_rna_seq_reads/
+
 ├── ext_long_read_assembly/
 │   ├── raw_and_QC/                       # external assembly, QUAST, BUSCO
 │   ├── polished_and_QC/                  # Polished FASTA + mapping stats
