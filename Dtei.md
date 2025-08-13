@@ -99,4 +99,75 @@ fastqc -o evogen_short_reads/raw_reads_and_QC/FASTQC \
 The FastQC reports for both R1 and R2 show uniformly high-quality data. Per-base sequence quality is consistently high across the full read length, with no regions of concern. Per-tile sequence quality is uniform, indicating no spatial bias across the flow cell. Base composition and GC content match expectations, and N content is negligible. No adapter contamination or overrepresented sequences were detected. Sequence duplication levels were not flagged and are within normal expectations for this dataset. 
 
 
+### 2b. RNA-seq Read QC  
 
+<details>
+<summary><strong>FASTQC v0.12.1</strong></summary>
+
+```bash
+# RNA-seq reads
+fastqc -o evo_gen_rna_seq_reads/raw_reads_and_QC/FASTQC \
+  evo_gen_rna_seq_reads/raw_reads_and_QC/*.fq.gz
+```
+</details>
+
+**Reports:** `evo_gen_rna_seq_reads/raw_reads_and_QC/FASTQC/`  
+- [`A1_TOU_Ll17_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A1_TOU_Ll17_l1_1_fastqc.html)  
+- [`A1_TOU_Ll17_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A1_TOU_Ll17_l1_2_fastqc.html)  
+- [`A2_TOUPl17_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A2_TOUPl17_l1_1_fastqc.html)  
+- [`A2_TOUPl17_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A2_TOUPl17_l1_2_fastqc.html)  
+- [`B1_TOU_Fl19_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B1_TOU_Fl19_l1_1_fastqc.html)  
+- [`B1_TOU_Fl19_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B1_TOU_Fl19_l1_2_fastqc.html)  
+- [`B2_TOUM11921_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B2_TOUM11921_l1_1_fastqc.html)  
+- [`B2_TOUM11921_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B2_TOUM11921_l1_2_fastqc.html)  
+- [`Im1610_ACAGTG_L005_R1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/Im1610_ACAGTG_L005_R1_fastqc.html)  
+- [`Im1610_ACAGTG_L005_R2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/Im1610_ACAGTG_L005_R2_fastqc.html)  
+
+Raw read quality across all libraries (R1 and R2) was generally high, with all samples passing “Per base sequence quality” and “Per sequence quality scores.” Several R1 files (A1_TOU_Ll17_l1_1, A2_TOUPl17_l1_1, Im1610_R1) and all other forward reads showed “FAIL” for “Per base sequence content” and “Per sequence GC content,” reflecting bias early in reads and deviation from a normal GC distribution. Many libraries also failed “Sequence Duplication Levels,” suggesting either biological redundancy (e.g., high-expression transcripts or low-complexity regions) or potential over-sequencing. Overrepresented sequences were flagged in some forward reads (A1_TOU_Ll17_l1_1, A2_TOUPl17_l1_1) but were absent in most reverse reads. Adapter contamination was consistently absent across all files. Notably, Im1610_R2 failed “Per tile sequence quality,” indicating localized quality drops on the flow cell, though per-base scores remained high overall. Despite these biases, the data are of sufficient quality for downstream analysis after standard trimming and filtering steps.
+
+
+**Notes:**  
+FastQC results for all libraries showed generally high per-base sequence quality across the full read length, with no per-base quality failures. The most frequent issues were in “Per base sequence content” and “Per sequence GC content,” which failed in all forward reads (A1_TOU_Ll17_l1_1, A2_TOUPl17_l1_1, B1_TOU_Fl19_l1_1, B2_TOUM11921_l1_1, Im1610_R1) and in most reverse reads for GC content. These failures reflect base composition bias in the first portion of the reads and deviations from an ideal GC distribution, patterns common in high-throughput sequencing data. “Sequence Duplication Levels” also failed in multiple libraries, particularly in reverse reads, suggesting either high biological redundancy or over-sequencing.  
+
+Several reverse reads (A1_TOU_Ll17_l1_2, A2_TOUPl17_l1_2, B1_TOU_Fl19_l1_2, B2_TOUM11921_l1_2, Im1610_R2) lacked PASS/WARN/FAIL calls for modules such as “Per tile sequence quality,” “Overrepresented sequences,” or “Adapter content,” which indicates those modules were not triggered rather than passed silently. No adapters were detected in any library, and overrepresented sequences were minimal except in forward reads of A1_TOU_Ll17_l1_1 and A2_TOUPl17_l1_1.  
+
+Overall, while composition and GC content warnings are present, the underlying sequence quality is strong, and the datasets are suitable for downstream analysis after standard trimming to remove biased bases at the start of reads.
+
+**Notes:**  
+Overall per-base sequence quality was high across all libraries.  
+- **A1_TOU_Ll17 (R1, R2)** – Slight quality drop and base composition bias in the first ~5–10 bp; mild per-tile quality variation in R2.  
+- **A2_TOUPl17 (R1, R2)** – Similar first ~5–10 bp quality dip and base composition bias; minor per-tile quality warnings in R2.  
+- **B1_TOU_Fl19 (R1, R2)** – GC distribution outside theoretical range; overrepresented sequences detected but mostly rRNA or low-complexity sequences; mild sequence duplication levels.  
+- **B2_TOUM11921 (R1, R2)** – Noticeable per-tile quality variation in R2; GC distribution shifted; low-level overrepresented sequences.  
+- **Im1610_ACAGTG (R1, R2)** – Slight base composition bias in first bases; R2 had per-tile quality variation; duplication levels modestly elevated but consistent across samples.  
+
+No adapter contamination was detected in any library. Overrepresented sequences were mainly biological in origin. All datasets are suitable for downstream mapping after standard preprocessing.
+
+---
+
+## 3. Trimming
+
+### 3a. Evogen Short Reads
+
+<details>
+<summary><strong>Trimmomatic v0.39</strong></summary>
+
+```bash
+trimmomatic PE -phred33 -threads 8 \
+  C3F0NACXX_PG0409_01A01_H1_L005_R1.fastq.gz \
+  C3F0NACXX_PG0409_01A01_H1_L005_R2.fastq.gz \
+  C3F0NACXX_PG0409_01A01_H1_L005_R1.trim.paired.fastq.gz \
+  C3F0NACXX_PG0409_01A01_H1_L005_R1.trim.unpaired.fastq.gz \
+  C3F0NACXX_PG0409_01A01_H1_L005_R2.trim.paired.fastq.gz \
+  C3F0NACXX_PG0409_01A01_H1_L005_R2.trim.unpaired.fastq.gz \
+  ILLUMINACLIP:custom-adapters.fa:2:30:10 \
+  HEADCROP:10 LEADING:3 TRAILING:3 \
+  SLIDINGWINDOW:4:15 MINLEN:36
+```
+</details>
+
+**Key output:** `evogen_short_reads/trimmed_reads_and_QC/`  
+- `C3F0NACXX_PG0409_01A01_H1_L005_R1.trim.paired.fq.gz`  
+- `C3F0NACXX_PG0409_01A01_H1_L005_R1.trim.unpaired.fq.gz`  
+- `C3F0NACXX_PG0409_01A01_H1_L005_R2.trim.paired.fq.gz`  
+- `C3F0NACXX_PG0409_01A01_H1_L005_R2.trim.unpaired.fq.gz`
