@@ -303,8 +303,8 @@ fastqc -o evogen_short_reads/trimmed_reads_and_QC/FASTQC \
 </details>
 
 **Reports:** `evogen_short_reads/trimmed_reads_and_QC/FASTQC/`  
- - [`C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R1_paired_fastqc.html)  
- - [`C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R2_paired_fastqc.html)  
+ - [`C3F0NACXX_PG0409_02A02_H1_L006_R1_paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R1_paired_fastqc.html)  
+ - [`C3F0NACXX_PG0409_02A02_H1_L006_R2_paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/C3F0NACXX_PG0409_02A02_H1_L006_R2_paired_fastqc.html)  
 
 
 **Notes**
