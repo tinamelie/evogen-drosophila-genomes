@@ -342,3 +342,22 @@ bwa-mem2 mem -t 8 -v 3 -a \
 **Notes:**  
 Trimmed short reads were aligned to the external genome using bwa-mem2. The genome was indexed first, then R1 and R2 were aligned separately to generate two SAM files for polypolish. These alignments were used directly for polishing.
 
+### 5b. Read polishing
+
+<details>
+<summary><strong>Polypolish v0.5.0</strong></summary>
+
+```bash
+polypolish polish \
+  ext_long_read_assembly/raw_and_QC/GCA_016746235.2_Prin_Dtei_1.1_genomic.fna \
+  alignmentsR1.sam alignmentsR2.sam \
+  > ext_long_read_assembly/polished_and_QC/GCA_016746235.2_Prin_Dtei_1.1_genomic_polished.fna
+```
+</details>
+
+**Key output:** `ext_long_read_assembly/polished_and_QC/`  
+- `GCA_016746235.2_Prin_Dtei_1.1_genomic_polished.fna`  
+
+- `GCA_016746235.2_Prin_Dtei_1.1_genomic_polished.flagstat`:
+
+
