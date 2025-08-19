@@ -92,8 +92,8 @@ fastqc -o evogen_short_reads/raw_reads_and_QC/FASTQC \
 </details>
 
 **Reports:** `evogen_short_reads/raw_reads_and_QC/FASTQC/`  
-- [`C3F0NACXX_PG0409_02A02_H1_L006_R1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/C3F0NACXX_PG0409_01A01_H1_L005_R1_fastqc.html)  
-- [`C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/C3F0NACXX_PG0409_02A02_H1_L006_R2_fastqc.html)
+- [`C3F0NACXX_PG0409_01A01_H1_L005_R1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/C3F0NACXX_PG0409_01A01_H1_L005_R1_fastqc.html)  
+- [`C3F0NACXX_PG0409_01A01_H1_L005_R2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/C3F0NACXX_PG0409_01A01_H1_L005_R2_fastqc.html)
 
 **Notes:**  
 The FastQC reports for both R1 and R2 show uniformly high-quality data. Per-base sequence quality is consistently high across the full read length, with no regions of concern. Per-tile sequence quality is uniform, indicating no spatial bias across the flow cell. Base composition and GC content match expectations, and N content is negligible. No adapter contamination or overrepresented sequences were detected. Sequence duplication levels were not flagged and are within normal expectations for this dataset. 
@@ -112,16 +112,16 @@ fastqc -o evo_gen_rna_seq_reads/raw_reads_and_QC/FASTQC \
 </details>
 
 **Reports:** `evo_gen_rna_seq_reads/raw_reads_and_QC/FASTQC/`  
-- [`A1_TOU_Ll17_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A1_TOU_Ll17_l1_1_fastqc.html)  
-- [`A1_TOU_Ll17_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A1_TOU_Ll17_l1_2_fastqc.html)  
-- [`A2_TOUPl17_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A2_TOUPl17_l1_1_fastqc.html)  
-- [`A2_TOUPl17_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/A2_TOUPl17_l1_2_fastqc.html)  
-- [`B1_TOU_Fl19_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B1_TOU_Fl19_l1_1_fastqc.html)  
-- [`B1_TOU_Fl19_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B1_TOU_Fl19_l1_2_fastqc.html)  
-- [`B2_TOUM11921_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B2_TOUM11921_l1_1_fastqc.html)  
-- [`B2_TOUM11921_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/B2_TOUM11921_l1_2_fastqc.html)  
-- [`Im1610_ACAGTG_L005_R1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/Im1610_ACAGTG_L005_R1_fastqc.html)  
-- [`Im1610_ACAGTG_L005_R2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dore/Im1610_ACAGTG_L005_R2_fastqc.html)  
+- [`A1_TOU_Ll17_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/A1_TOU_Ll17_l1_1_fastqc.html)  
+- [`A1_TOU_Ll17_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/A1_TOU_Ll17_l1_2_fastqc.html)  
+- [`A2_TOUPl17_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/A2_TOUPl17_l1_1_fastqc.html)  
+- [`A2_TOUPl17_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/A2_TOUPl17_l1_2_fastqc.html)  
+- [`B1_TOU_Fl19_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/B1_TOU_Fl19_l1_1_fastqc.html)  
+- [`B1_TOU_Fl19_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/B1_TOU_Fl19_l1_2_fastqc.html)  
+- [`B2_TOUM11921_l1_1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/B2_TOUM11921_l1_1_fastqc.html)  
+- [`B2_TOUM11921_l1_2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/B2_TOUM11921_l1_2_fastqc.html)  
+- [`Im1610_ACAGTG_L005_R1_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/Im1610_ACAGTG_L005_R1_fastqc.html)  
+- [`Im1610_ACAGTG_L005_R2_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/Im1610_ACAGTG_L005_R2_fastqc.html)  
 
 Raw read quality across all libraries (R1 and R2) was generally high, with all samples passing “Per base sequence quality” and “Per sequence quality scores.” Several R1 files (A1_TOU_Ll17_l1_1, A2_TOUPl17_l1_1, Im1610_R1) and all other forward reads showed “FAIL” for “Per base sequence content” and “Per sequence GC content,” reflecting bias early in reads and deviation from a normal GC distribution. Many libraries also failed “Sequence Duplication Levels,” suggesting either biological redundancy (e.g., high-expression transcripts or low-complexity regions) or potential over-sequencing. Overrepresented sequences were flagged in some forward reads (A1_TOU_Ll17_l1_1, A2_TOUPl17_l1_1) but were absent in most reverse reads. Adapter contamination was consistently absent across all files. Notably, Im1610_R2 failed “Per tile sequence quality,” indicating localized quality drops on the flow cell, though per-base scores remained high overall. Despite these biases, the data are of sufficient quality for downstream analysis after standard trimming and filtering steps.
 
@@ -171,3 +171,174 @@ trimmomatic PE -phred33 -threads 8 \
 - `C3F0NACXX_PG0409_01A01_H1_L005_R1.trim.unpaired.fq.gz`  
 - `C3F0NACXX_PG0409_01A01_H1_L005_R2.trim.paired.fq.gz`  
 - `C3F0NACXX_PG0409_01A01_H1_L005_R2.trim.unpaired.fq.gz`
+- 
+
+**Results summary:**  
+```
+Input Read Pairs: 172225062
+Both Surviving: 161380883 (93.70%)
+Forward Only Surviving: 7650968 (4.44%)
+Reverse Only Surviving: 1061761 (0.62%)
+Dropped: 2131450 (1.24%)
+```
+
+**Notes:**
+The short reads were trimmed using a sliding window approach to clean up any low-quality regions near the ends of the reads. The SLIDINGWINDOW:4:15 setting means it looks at each 4-base window and trims once the average quality in a window drops below 15. This is a somewhat strict setting to make sure only high-quality bases are kept – appropriate for polishing purposes rather than assembly.
+
+Trimming worked well—about 93.7% of read pairs survived. A small number of reads were trimmed too short or had quality issues and were dropped or left as single-end. This is normal and expected. The cleaned reads were used for mapping.
+
+
+### 3b. Evogen RNA-Seq Reads
+
+<details>
+<summary><strong>Trimmomatic v0.39</strong></summary>
+
+```bash
+#!/bin/bash
+
+threads=8
+adapter_file="custom-adapters.fa"
+
+# source / destination directories
+raw_dir="evo_gen_rna_seq_reads/raw_reads_and_QC"
+out_dir="evo_gen_rna_seq_reads/trimmed_reads_and_QC"
+mkdir -p "${out_dir}"
+
+# Base sample identifiers
+samples=(
+  "A1_TOU_Ll17_l1"
+  "A2_TOUPl17_l1"
+  "B1_TOU_Fl19_l1"
+  "B2_TOUM11921_l1"
+  "Im1610_ACAGTG_L005_R"
+)
+
+for s in "${samples[@]}"; do
+  # Raw read files
+  if [[ "$s" == Im1611* ]]; then
+    R1="${raw_dir}/${s}1.fastq.gz"
+    R2="${raw_dir}/${s}2.fastq.gz"
+    base="${s}"
+  else
+    R1="${raw_dir}/${s}_1.fq.gz"
+    R2="${raw_dir}/${s}_2.fq.gz"
+    base="${s}"
+  fi
+
+  # Output file names
+  R1_p="${out_dir}/${base}_1.trim.paired.fq.gz"
+  R1_u="${out_dir}/${base}_1.trim.unpaired.fq.gz"
+  R2_p="${out_dir}/${base}_2.trim.paired.fq.gz"
+  R2_u="${out_dir}/${base}_2.trim.unpaired.fq.gz"
+
+  echo "Trimming ${base}..."
+  trimmomatic PE -threads "${threads}" -phred33 \
+    "${R1}" "${R2}" \
+    "${R1_p}" "${R1_u}" \
+    "${R2_p}" "${R2_u}" \
+    ILLUMINACLIP:${adapter_file}:2:30:10 \
+    HEADCROP:10 LEADING:3 TRAILING:3 \
+    SLIDINGWINDOW:4:15 MINLEN:36
+done
+```
+</details>
+
+**Key output:** `evo_gen_rna_seq_reads/trimmed_reads_and_QC/`  
+- A1_TOU_Ll17_l1_1.trim.paired.fq.gz
+- A1_TOU_Ll17_l1_2.trim.paired.fq.gz
+- A2_TOUPl17_l1_1.trim.paired.fq.gz
+- A2_TOUPl17_l1_2.trim.paired.fq.gz
+- B1_TOU_Fl19_l1_1.trim.paired.fq.gz
+- B1_TOU_Fl19_l1_2.trim.paired.fq.gz
+- B2_TOUM11921_l1_1.trim.paired.fq.gz
+- B2_TOUM11921_l1_2.trim.paired.fq.gz
+- Im1610_ACAGTG_L005_R1.trim.paired.fq.gz
+- Im1610_ACAGTG_L005_R2.trim.paired.fq.gz
+
+**Results summary:**
+# UPDATE THIS
+Sample               | Input Pairs | Paired Surviving | Forward Only | Reverse Only | Dropped | % Surviving
+---------------------|-------------|------------------|--------------|---------------|---------|-------------
+A1_TOU_Ll17_l1       | 0           | 0                | 0            | 0             | 0       | 0.00%
+A2_TOUPl17_l1        | 0           | 0                | 0            | 0             | 0       | 0.00%
+B1_TOU_Fl19_l1       | 0           | 0                | 0            | 0             | 0       | 0.00%
+B2_TOUM11921_l1      | 0           | 0                | 0            | 0             | 0       | 0.00%
+Im1610_ACAGTG_L005_R | 0           | 0                | 0            | 0             | 0       | 0.00%
+
+# ADD THESE
+
+**Notes:**  
+
+## 4. Post-trimming Read QC
+
+### 4a. Short Read QC (Post-trimming)
+
+<details>
+<summary><strong>FASTQC v0.12.1</strong></summary>
+
+```bash
+fastqc -o evogen_short_reads/trimmed_reads_and_QC/FASTQC \
+       evogen_short_reads/trimmed_reads_and_QC/*_paired.fq.gz
+```
+</details>
+
+**Reports:** `evogen_short_reads/trimmed_reads_and_QC/FASTQC/`  
+ - [`C3F0NACXX_PG0409_01A01_H1_L005_R1_paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/C3F0NACXX_PG0409_01A01_H1_L005_R1_paired_fastqc.html)  
+ - [`C3F0NACXX_PG0409_01A01_H1_L005_R2_paired_fastqc.html`](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/C3F0NACXX_PG0409_01A01_H1_L005_R2_paired_fastqc.html)  
+# ADD THESE
+**Notes**
+# ADD THESE
+
+### 4b. RNA-seq Read QC (Post-trimming)
+
+<details>
+<summary><strong>FASTQC v0.12.1</strong></summary>
+
+```bash
+fastqc -o evo_gen_rna_seq_reads/trimmed_reads_and_QC/FASTQC \
+       evo_gen_rna_seq_reads/trimmed_reads_and_QC/*_paired.fq.gz
+```
+</details>
+
+**Reports:** `evo_gen_rna_seq_reads/trimmed_reads_and_QC/FASTQC/`  
+- [A1_TOU_Ll17_l1_1.trim.paired_fastqc.html](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/A1_TOU_Ll17_l1_1.trim.paired_fastqc.html)
+- [A1_TOU_Ll17_l1_2.trim.paired_fastqc.html](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/A1_TOU_Ll17_l1_2.trim.paired_fastqc.html)
+- [A2_TOUPl17_l1_1.trim.paired_fastqc.html](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/A2_TOUPl17_l1_1.trim.paired_fastqc.html)
+- [A2_TOUPl17_l1_2.trim.paired_fastqc.html](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/A2_TOUPl17_l1_2.trim.paired_fastqc.html)
+- [B1_TOU_Fl19_l1_1.trim.paired_fastqc.html](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/B1_TOU_Fl19_l1_1.trim.paired_fastqc.html)
+- [B1_TOU_Fl19_l1_2.trim.paired_fastqc.html](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/B1_TOU_Fl19_l1_2.trim.paired_fastqc.html)
+- [B2_TOUM11921_l1_1.trim.paired_fastqc.html](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/B2_TOUM11921_l1_1.trim.paired_fastqc.html)
+- [B2_TOUM11921_l1_2.trim.paired_fastqc.html](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/B2_TOUM11921_l1_2.trim.paired_fastqc.html)
+- [Im1610_ACAGTG_L005_R1.trim.paired_fastqc.html](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/Im1610_ACAGTG_L005_R1.trim.paired_fastqc.html)
+- [Im1610_ACAGTG_L005_R2.trim.paired_fastqc.html](https://tinamelie.github.io/evogen-drosophila-genomes/reports/Dtei/Im1610_ACAGTG_L005_R2.trim.paired_fastqc.html)
+
+**Notes**
+# ADD THESE
+
+## 5. Read mapping and genome polishing (Short reads + External genome)
+
+### 5a. Alignment
+
+<details>
+<summary><strong>bwa-mem2 v2.2.1</strong></summary>
+
+```bash
+bwa-mem2 index ext_long_read_assembly/raw_and_QC/GCA_016746235.2_Prin_Dtei_1.1_genomic.fna
+
+bwa-mem2 mem -t 8 -v 3 -a \
+  ext_long_read_assembly/raw_and_QC/GCA_016746235.2_Prin_Dtei_1.1_genomic.fna \
+  evogen_short_reads/trimmed_reads_and_QC/C3F0NACXX_PG0409_01A01_H1_L005_R1_paired.fq.gz > alignmentsR1.sam
+
+bwa-mem2 mem -t 8 -v 3 -a \
+  ext_long_read_assembly/raw_and_QC/GCA_016746235.2_Prin_Dtei_1.1_genomic.fna \
+  evogen_short_reads/trimmed_reads_and_QC/C3F0NACXX_PG0409_01A01_H1_L005_R2_paired.fq.gz > alignmentsR2.sam
+```
+</details>
+
+**Output:**  
+- `alignmentsR1.sam`  
+- `alignmentsR2.sam`
+
+**Notes:**  
+Trimmed short reads were aligned to the external genome using bwa-mem2. The genome was indexed first, then R1 and R2 were aligned separately to generate two SAM files for polypolish. These alignments were used directly for polishing.
+
