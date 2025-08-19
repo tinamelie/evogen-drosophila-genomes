@@ -378,7 +378,7 @@ Trimmed short reads were aligned to the external genome using bwa-mem2. The geno
 polypolish polish \
   ext_long_read_assembly/raw_and_QC/GCA_005876975.1_DoreRS1_genomic.fna \
   alignmentsR1.sam alignmentsR2.sam \
-  > ext_long_read_assembly/polished_and_QC/polished.fasta
+  > ext_long_read_assembly/polished_and_QC/GCA_005876975.1_DoreRS1_genomic_polished.fasta
 ```
 </details>
 
