@@ -392,11 +392,15 @@ for ASM in "$RAW_ASM" "$POL_ASM"; do
       | samtools sort -@16 -o "${BASE}.bam" -
     samtools flagstat "${BASE}.bam" > "${BASE}.flagstat"
 done
+```
+</details>
 
 **Key output:** `ext_long_read_assembly/polished_and_QC/`  
 - `GCA_005876975.1_DoreRS1_genomic_polished.fasta`  
 
 - `GCA_005876975.1_DoreRS1_genomic_polished.flagstat`:
+
+
 ```307086568 + 0 in total (QC-passed reads + QC-failed reads)
 306775172 + 0 primary
 0 + 0 secondary
