@@ -375,12 +375,23 @@ Trimmed short reads were aligned to the external genome using bwa-mem2. The geno
 <summary><strong>Polypolish v0.5.0</strong></summary>
 
 ```bash
-polypolish polish \
-  ext_long_read_assembly/raw_and_QC/GCA_005876975.1_DoreRS1_genomic.fna \
-  alignmentsR1.sam alignmentsR2.sam \
-  > ext_long_read_assembly/polished_and_QC/GCA_005876975.1_DoreRS1_genomic_polished.fasta
-```
-</details>
+# Draft and polished assemblies
+RAW_ASM=ext_long_read_assembly/raw_and_QC/GCA_005876975.1_DoreRS1_genomic.fna
+POL_ASM=ext_long_read_assembly/polished_and_QC/GCA_005876975.1_DoreRS1_genomic_polished.fasta
+READ1=../akashi_short_reads/C3F0NACXX_PG0409_02A02_H1_L006_R1_paired.fq.gz
+READ2=../akashi_short_reads/C3F0NACXX_PG0409_02A02_H1_L006_R2_paired.fq.gz
+
+# Index each assembly once before mapping
+bwa-mem2 index "$RAW_ASM"
+bwa-mem2 index "$POL_ASM"
+
+# Map short reads to each assembly, produce BAMs, and generate mapping stats
+for ASM in "$RAW_ASM" "$POL_ASM"; do
+    BASE=$(basename "${ASM%.*}")
+    bwa-mem2 mem -t 16 "$ASM" "$READ1" "$READ2" \
+      | samtools sort -@16 -o "${BASE}.bam" -
+    samtools flagstat "${BASE}.bam" > "${BASE}.flagstat"
+done
 
 **Key output:** `ext_long_read_assembly/polished_and_QC/`  
 - `GCA_005876975.1_DoreRS1_genomic_polished.fasta`  
