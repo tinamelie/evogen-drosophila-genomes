@@ -348,10 +348,28 @@ Trimmed short reads were aligned to the external genome using bwa-mem2. The geno
 <summary><strong>Polypolish v0.5.0</strong></summary>
 
 ```bash
-polypolish polish \
-  ext_long_read_assembly/raw_and_QC/GCA_016746235.2_Prin_Dtei_1.1_genomic.fna \
-  alignmentsR1.sam alignmentsR2.sam \
-  > ext_long_read_assembly/polished_and_QC/GCA_016746235.2_Prin_Dtei_1.1_genomic_polished.fna
+# Draft and polished assemblies
+RAW_ASM=ext_long_read_assembly/raw_and_QC/GCA_016746235.2_Prin_Dtei_1.1_genomic.fna
+POL_ASM=ext_long_read_assembly/polished_and_QC/GCA_016746235.2_Prin_Dtei_1.1_genomic_polished.fasta
+READ1=evogen_short_reads/trimmed_reads_and_QC/C3F0NACXX_PG0409_01A01_H1_L005_R1_paired.fq.gz
+READ2=evogen_short_reads/trimmed_reads_and_QC/C3F0NACXX_PG0409_01A01_H1_L005_R2_paired.fq.gz
+
+# Make per-end alignments for Polypolish
+bwa-mem2 index "$RAW_ASM"
+bwa-mem2 mem -t 8 -a "$RAW_ASM" "$READ1" > alignmentsR1.sam
+bwa-mem2 mem -t 8 -a "$RAW_ASM" "$READ2" > alignmentsR2.sam
+
+# Polish the draft assembly
+polypolish polish "$RAW_ASM" alignmentsR1.sam alignmentsR2.sam > "$POL_ASM"
+
+# Map reads back to draft and polished assemblies for comparison
+for ASM in "$RAW_ASM" "$POL_ASM"; do
+  BASE=$(basename "${ASM%.*}")
+  bwa-mem2 index "$ASM"
+  bwa-mem2 mem -t 8 "$ASM" "$READ1" "$READ2" \
+    | samtools sort -@8 -o "${BASE}.bam" -
+  samtools flagstat "${BASE}.bam" > "${BASE}.flagstat"
+done
 ```
 </details>
 
