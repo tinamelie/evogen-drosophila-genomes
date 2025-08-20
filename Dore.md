@@ -647,7 +647,7 @@ done
 
 
 **Notes:**  
-- Two BRAKER runs were conducted: one using RNA-seq evidence alone (no --prot_seq), and one using both RNA-seq and protein hints from D. melanogaster (dmel-all-translation-r6.64.fasta) - current_ Drosophila melanogaster_ from Flybase. You can find these in the without_prot and with_prot subfolders in the BRAKER directory. 
+- Two BRAKER runs were conducted: one using RNA-seq evidence alone (no --prot_seq), and one using both RNA-seq and protein hints from _D. melanogaster_ (dmel-all-translation-r6.64.fasta) - current_ Drosophila melanogaster_ from Flybase. You can find these in the without_prot and with_prot subfolders in the BRAKER directory. 
 
 - Adding protein evidence resulted in more conservative predictions: fewer genes, exons, and CDS, likely reflecting a higher-confidence set constrained by known protein models. The RNA-seq-only run predicted more features overall, possibly including novel or species-specific elements, but at the risk of overprediction.
 
