@@ -351,8 +351,8 @@ Trimmed short reads were aligned to the external genome using bwa-mem2. The geno
 # Draft and polished assemblies
 RAW_ASM=ext_long_read_assembly/raw_and_QC/GCA_016746235.2_Prin_Dtei_1.1_genomic.fna
 POL_ASM=ext_long_read_assembly/polished_and_QC/GCA_016746235.2_Prin_Dtei_1.1_genomic_polished.fasta
-READ1=evogen_short_reads/trimmed_reads_and_QC/C3F0NACXX_PG0409_01A01_H1_L005_R1_paired.fq.gz
-READ2=evogen_short_reads/trimmed_reads_and_QC/C3F0NACXX_PG0409_01A01_H1_L005_R2_paired.fq.gz
+READ1=evogen_short_reads/trimmed_reads_and_QC/C3F0NACXX_PG0409_01A01_H1_L005_R1.trim.paired.fq.gz
+READ2=evogen_short_reads/trimmed_reads_and_QC/C3F0NACXX_PG0409_01A01_H1_L005_R2.trim.paired.fq.gz
 
 # Make per-end alignments for Polypolish
 bwa-mem2 index "$RAW_ASM"
