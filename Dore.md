@@ -393,6 +393,9 @@ for ASM in "$RAW_ASM" "$POL_ASM"; do
   samtools flagstat "${BASE}.bam" > "${BASE}.flagstat"
 done
 
+```
+</details>
+
 **Key output:** `ext_long_read_assembly/polished_and_QC/`  
 - `GCA_005876975.1_DoreRS1_genomic_polished.fasta`  
 
